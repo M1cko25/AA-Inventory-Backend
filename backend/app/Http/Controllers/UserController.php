@@ -11,14 +11,18 @@ class UserController extends Controller
 {
     public function create($_, array $args)
     {
-
         $user = User::create([
             'name' => $args['name'],
             'email' => $args['email'],
             'password' => Hash::make($args['password']),
         ]);
 
-        return $user;
+        $token = $user->createToken('auth_token')->plainTextToken;
+
+        return [
+            'user' => $user,
+            'token' => $token
+        ];
     }
 
     public function login($_, array $args){
@@ -28,6 +32,11 @@ class UserController extends Controller
             throw new \Exception('Invalid credentials');
         }
 
-        return $user;
+        $token = $user->createToken('auth_token')->plainTextToken;
+
+        return [
+            'user' => $user,
+            'token' => $token
+        ];
     }
 }

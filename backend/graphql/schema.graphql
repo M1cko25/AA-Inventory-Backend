@@ -1,6 +1,11 @@
 #import User/user.schema.graphql
 #import User/user.query.graphql
 #import User/user.mutation.graphql
+#import Product/product.schema.graphql
+#import Product/product.query.graphql
+#import Product/product.mutation.graphql
+
+scalar DateTime @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
 
 type User {
   id: ID!

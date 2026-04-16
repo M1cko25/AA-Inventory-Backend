@@ -1,5 +1,5 @@
 extend type Mutation {
     register(
         input: CreateUserInput! @spread
-    ): User @field(resolver: "App\\Http\\Controllers\\UserController@create")
+    ): AuthPayload! @field(resolver: "App\\Http\\Controllers\\UserController@create")
 }

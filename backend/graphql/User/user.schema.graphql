@@ -8,3 +8,8 @@ input CreateUserInput {
     "The user's password."
     password: String! @rules(apply: ["min:8"])
 }
+
+type AuthPayload {
+    user: User!
+    token: String!
+}

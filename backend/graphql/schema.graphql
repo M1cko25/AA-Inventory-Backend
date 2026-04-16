@@ -1,0 +1,11 @@
+#import User/user.schema.graphql
+#import User/user.query.graphql
+#import User/user.mutation.graphql
+
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}

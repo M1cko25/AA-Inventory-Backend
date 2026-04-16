@@ -1,0 +1,10 @@
+input CreateUserInput {
+    "The user's name."
+    name: String!
+
+    "The user's email address."
+    email: String! @rules(apply: ["email", "unique:users,email"])
+
+    "The user's password."
+    password: String! @rules(apply: ["min:8"])
+}

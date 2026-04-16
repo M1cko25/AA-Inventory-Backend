@@ -1,0 +1,3 @@
+extend type Query {
+    user(email: String! @eq): User @find
+}
